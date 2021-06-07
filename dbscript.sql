@@ -3,21 +3,21 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 06, 2021 at 07:13 PM
--- Server version: 5.7.23
--- PHP Version: 7.2.8
+-- Czas generowania: 07 Cze 2021, 10:32
+-- Wersja serwera: 5.7.23
+-- Wersja PHP: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `prison-web-service-dev`
+-- Baza danych: `prison-web-service-dev`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cells`
+-- Struktura tabeli dla tabeli `cells`
 --
 
 CREATE TABLE `cells` (
@@ -27,7 +27,7 @@ CREATE TABLE `cells` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `cells`
+-- Zrzut danych tabeli `cells`
 --
 
 INSERT INTO `cells` (`id`, `cell_number`, `spots`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `cells` (`id`, `cell_number`, `spots`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hibernate_sequence`
+-- Struktura tabeli dla tabeli `hibernate_sequence`
 --
 
 CREATE TABLE `hibernate_sequence` (
@@ -93,7 +93,7 @@ CREATE TABLE `hibernate_sequence` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `hibernate_sequence`
+-- Zrzut danych tabeli `hibernate_sequence`
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
@@ -102,7 +102,7 @@ INSERT INTO `hibernate_sequence` (`next_val`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `meetings`
+-- Struktura tabeli dla tabeli `meetings`
 --
 
 CREATE TABLE `meetings` (
@@ -117,7 +117,7 @@ CREATE TABLE `meetings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `meetings`
+-- Zrzut danych tabeli `meetings`
 --
 
 INSERT INTO `meetings` (`id`, `is_finished`, `meeting_end`, `meeting_room_id`, `meeting_start`, `prisoner_officer_id`, `prisoner_id`, `visitor_data`) VALUES
@@ -149,7 +149,7 @@ INSERT INTO `meetings` (`id`, `is_finished`, `meeting_end`, `meeting_room_id`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `meeting_rooms`
+-- Struktura tabeli dla tabeli `meeting_rooms`
 --
 
 CREATE TABLE `meeting_rooms` (
@@ -159,7 +159,7 @@ CREATE TABLE `meeting_rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `meeting_rooms`
+-- Zrzut danych tabeli `meeting_rooms`
 --
 
 INSERT INTO `meeting_rooms` (`id`, `room_number`, `spots`) VALUES
@@ -172,7 +172,7 @@ INSERT INTO `meeting_rooms` (`id`, `room_number`, `spots`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prisoners`
+-- Struktura tabeli dla tabeli `prisoners`
 --
 
 CREATE TABLE `prisoners` (
@@ -184,58 +184,58 @@ CREATE TABLE `prisoners` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `prisoners`
+-- Zrzut danych tabeli `prisoners`
 --
 
 INSERT INTO `prisoners` (`id`, `cell_id`, `judgement`, `name`, `surname`) VALUES
-(0, NULL, 'Deleniti voluptas dolorem voluptatem eos nostrum quam est vero earum perspiciatis accusantium est ullam hic.', 'Jordane', 'Hansen'),
-(1, NULL, 'Rerum cum error adipisci voluptates aliquam maxime dolores temporibus aut.', 'Skylar', 'Hodkiewicz'),
-(2, NULL, 'Cum itaque accusamus optio rerum magni quidem maxime quae quia molestias eaque tempore et dolores ut sapiente odit numquam.', 'Maryse', 'Herzog'),
-(3, NULL, 'Porro veritatis repudiandae voluptatem blanditiis distinctio eligendi repellendus doloribus ducimus voluptatum ullam atque nobis ut.', 'Mafalda', 'Douglas'),
-(4, NULL, 'Aut aspernatur sapiente illum nesciunt distinctio rerum qui a qui magnam laborum illum quidem similique accusamus error veniam maxime quod.', 'Abbigail', 'Satterfield'),
-(5, NULL, 'Quo quisquam a doloremque id eveniet aliquid ipsa aut blanditiis ut eos eos accusantium facilis harum totam.', 'Maya', 'Rowe'),
-(6, NULL, 'Libero sit facere sed error aspernatur ut accusamus quod rerum repellendus dolor quia tempore explicabo sit modi non aperiam nesciunt.', 'Monica', 'Dach'),
-(7, NULL, 'Iusto odio culpa at maxime natus quia nisi voluptatem tempore aut atque adipisci dolore voluptas et repellat.', 'Betsy', 'Runte'),
-(9, NULL, 'Et sunt ratione sapiente ut qui porro quam dicta eveniet dignissimos.', 'Clementina', 'Lubowitz'),
-(16, NULL, 'Qui facilis qui harum commodi similique odio iusto optio voluptatem pariatur hic.', 'Barrett', 'Grady'),
-(19, NULL, 'Nisi voluptatibus corrupti illum recusandae laboriosam rerum sit occaecati quia quo vitae dolores dolores doloremque.', 'Adrian', 'Fay'),
-(20, NULL, 'Ut fugiat reprehenderit repudiandae consequuntur dolores deleniti et pariatur nihil sunt ut laboriosam quia nulla et.', 'Abdiel', 'Brakus'),
-(22, NULL, 'Aliquam culpa officiis sed sit quis laborum et maxime totam ducimus autem omnis et excepturi nobis pariatur eveniet.', 'Tierra', 'Volkman'),
-(26, NULL, 'Vero aliquam ea qui dolores quo eveniet repellendus libero quia exercitationem amet dolor dolorum in tempora et perferendis.', 'Aileen', 'Padberg'),
-(57, NULL, 'Eius a totam eos qui nesciunt qui ea ea est vitae voluptas molestiae ducimus.', 'Liam', 'Labadie'),
-(59, NULL, 'Quis et corrupti excepturi enim est hic et qui molestiae perspiciatis at nobis reprehenderit nostrum possimus assumenda quisquam ut nobis.', 'Trycia', 'Crona'),
-(62, NULL, 'Ratione temporibus iusto voluptas quisquam aliquid ut esse ad facere id.', 'Ned', 'Gorczany'),
-(98, NULL, 'Maiores sit aperiam dolores reiciendis porro quo aut ut iure quo facilis.', 'Danielle', 'Romaguera'),
-(120, NULL, 'Nam culpa error architecto corporis quos quia et pariatur quaerat dolor sit eum et ullam at debitis asperiores.', 'Danika', 'Runte'),
-(314, NULL, 'Quod illo perferendis iure laudantium in consequatur consequatur accusantium rerum.', 'Maybell', 'Adams'),
-(315, NULL, 'Qui a sed quidem cumque dolore nihil ea aut voluptatem.', 'Gene', 'Schimmel'),
-(321, NULL, 'Dolores eos non pariatur dolorem magni voluptatem et eos eum qui culpa voluptas consequatur maiores sint ut architecto sed alias qui.', 'Wanda', 'Dach'),
-(370, NULL, 'Qui est et quibusdam cupiditate omnis deserunt qui perspiciatis voluptas minus voluptate unde non praesentium rerum.', 'Irma', 'Greenholt'),
-(558, NULL, 'Velit perferendis nemo rerum nostrum dolores minus explicabo doloribus qui ab velit illum sint nam in non neque assumenda labore ea maxime.', 'Norbert', 'Stehr'),
-(561, NULL, 'Delectus qui autem officia sunt aut aliquid ex ratione eos voluptates.', 'Okey', 'Green'),
-(567, NULL, 'Officia quidem eos laboriosam occaecati deserunt nesciunt dolorem veritatis facere in et quos.', 'Dante', 'Kozey'),
-(785, NULL, 'Saepe esse temporibus qui animi et quibusdam numquam aliquam praesentium inventore non provident illum officia ipsam quidem deserunt quia.', 'Wendy', 'Kutch'),
-(8291, NULL, 'Accusantium vitae deserunt velit culpa distinctio est qui rem necessitatibus fugit saepe aut dolorem esse quibusdam.', 'Keith', 'Hauck'),
-(9494, NULL, 'Atque qui nesciunt nostrum sint sunt nisi voluptatem aut nesciunt accusantium saepe quos facere rerum sit enim.', 'Demarcus', 'Muller'),
-(24965, NULL, 'Et voluptatem dolorem consequatur iusto accusantium deserunt nisi similique aut velit.', 'Christy', 'Rutherford'),
-(38240, NULL, 'Qui dolores animi fugit magni et nisi distinctio suscipit reiciendis quod rerum quia ratione tempora ea deserunt incidunt autem cumque minima.', 'Clementine', 'Heathcote'),
-(70947, NULL, 'Dolore recusandae ab mollitia et vel ad qui magni voluptates qui est est maiores eum cum.', 'Myrtice', 'Farrell'),
-(90964, NULL, 'Omnis autem porro non quo dolorem et in minus commodi in ea totam repellat autem numquam repudiandae praesentium.', 'Danielle', 'Hoeger'),
-(99324, NULL, 'Amet labore magnam doloribus perspiciatis officiis quisquam aliquam et est.', 'Filiberto', 'Hintz'),
-(127653, NULL, 'Ipsam maiores iure voluptas dignissimos et et vero vero molestiae voluptates.', 'Yolanda', 'Roob'),
-(1693251, NULL, 'Cumque quisquam magnam quia commodi nesciunt aut soluta sunt mollitia quaerat provident quo voluptatem praesentium maxime expedita laboriosam.', 'Zakary', 'Sauer'),
-(3217990, NULL, 'Perferendis illum laborum cum qui enim tempore a soluta in.', 'Alfonso', 'Sawayn'),
-(4515637, NULL, 'Fugit perferendis consequatur velit delectus error enim eum omnis quidem voluptate sit quia impedit ducimus quo.', 'Bernie', 'Hilpert'),
-(4639683, NULL, 'Fuga molestias dolore optio autem iusto quae labore nemo a eius.', 'Rashawn', 'Harber'),
-(37493032, NULL, 'Qui atque corporis autem architecto quae doloremque aut nemo ratione asperiores doloribus est sunt qui tenetur quis.', 'Solon', 'Treutel'),
-(45326215, NULL, 'Perferendis laborum aut consequatur sed consequatur qui ipsa eligendi ex voluptas ea similique placeat blanditiis deserunt eaque in et.', 'Clair', 'Hickle'),
-(83917824, NULL, 'Temporibus facilis ut mollitia eos facere dolor aperiam cum est.', 'Makenzie', 'Gleason'),
-(9223372036854775807, NULL, 'Iure quasi excepturi excepturi ut cumque doloribus et harum explicabo.', 'Salvador', 'Wisozk');
+(0, 0, 'Deleniti voluptas dolorem voluptatem eos nostrum quam est vero earum perspiciatis accusantium est ullam hic.', 'Jordane', 'Hansen'),
+(1, 0, 'Rerum cum error adipisci voluptates aliquam maxime dolores temporibus aut.', 'Skylar', 'Hodkiewicz'),
+(2, 3, 'Cum itaque accusamus optio rerum magni quidem maxime quae quia molestias eaque tempore et dolores ut sapiente odit numquam.', 'Maryse', 'Herzog'),
+(3, 3, 'Porro veritatis repudiandae voluptatem blanditiis distinctio eligendi repellendus doloribus ducimus voluptatum ullam atque nobis ut.', 'Mafalda', 'Douglas'),
+(4, 3, 'Aut aspernatur sapiente illum nesciunt distinctio rerum qui a qui magnam laborum illum quidem similique accusamus error veniam maxime quod.', 'Abbigail', 'Satterfield'),
+(5, 4, 'Quo quisquam a doloremque id eveniet aliquid ipsa aut blanditiis ut eos eos accusantium facilis harum totam.', 'Maya', 'Rowe'),
+(6, 4, 'Libero sit facere sed error aspernatur ut accusamus quod rerum repellendus dolor quia tempore explicabo sit modi non aperiam nesciunt.', 'Monica', 'Dach'),
+(7, 4, 'Iusto odio culpa at maxime natus quia nisi voluptatem tempore aut atque adipisci dolore voluptas et repellat.', 'Betsy', 'Runte'),
+(9, 4, 'Et sunt ratione sapiente ut qui porro quam dicta eveniet dignissimos.', 'Clementina', 'Lubowitz'),
+(16, 4, 'Qui facilis qui harum commodi similique odio iusto optio voluptatem pariatur hic.', 'Barrett', 'Grady'),
+(19, 5, 'Nisi voluptatibus corrupti illum recusandae laboriosam rerum sit occaecati quia quo vitae dolores dolores doloremque.', 'Adrian', 'Fay'),
+(20, 5, 'Ut fugiat reprehenderit repudiandae consequuntur dolores deleniti et pariatur nihil sunt ut laboriosam quia nulla et.', 'Abdiel', 'Brakus'),
+(22, 5, 'Aliquam culpa officiis sed sit quis laborum et maxime totam ducimus autem omnis et excepturi nobis pariatur eveniet.', 'Tierra', 'Volkman'),
+(26, 6, 'Vero aliquam ea qui dolores quo eveniet repellendus libero quia exercitationem amet dolor dolorum in tempora et perferendis.', 'Aileen', 'Padberg'),
+(57, 6, 'Eius a totam eos qui nesciunt qui ea ea est vitae voluptas molestiae ducimus.', 'Liam', 'Labadie'),
+(59, 6, 'Quis et corrupti excepturi enim est hic et qui molestiae perspiciatis at nobis reprehenderit nostrum possimus assumenda quisquam ut nobis.', 'Trycia', 'Crona'),
+(62, 7, 'Ratione temporibus iusto voluptas quisquam aliquid ut esse ad facere id.', 'Ned', 'Gorczany'),
+(98, 9, 'Maiores sit aperiam dolores reiciendis porro quo aut ut iure quo facilis.', 'Danielle', 'Romaguera'),
+(120, 9, 'Nam culpa error architecto corporis quos quia et pariatur quaerat dolor sit eum et ullam at debitis asperiores.', 'Danika', 'Runte'),
+(314, 9, 'Quod illo perferendis iure laudantium in consequatur consequatur accusantium rerum.', 'Maybell', 'Adams'),
+(315, 9, 'Qui a sed quidem cumque dolore nihil ea aut voluptatem.', 'Gene', 'Schimmel'),
+(321, 9, 'Dolores eos non pariatur dolorem magni voluptatem et eos eum qui culpa voluptas consequatur maiores sint ut architecto sed alias qui.', 'Wanda', 'Dach'),
+(370, 20, 'Qui est et quibusdam cupiditate omnis deserunt qui perspiciatis voluptas minus voluptate unde non praesentium rerum.', 'Irma', 'Greenholt'),
+(558, 20, 'Velit perferendis nemo rerum nostrum dolores minus explicabo doloribus qui ab velit illum sint nam in non neque assumenda labore ea maxime.', 'Norbert', 'Stehr'),
+(561, 20, 'Delectus qui autem officia sunt aut aliquid ex ratione eos voluptates.', 'Okey', 'Green'),
+(567, 21, 'Officia quidem eos laboriosam occaecati deserunt nesciunt dolorem veritatis facere in et quos.', 'Dante', 'Kozey'),
+(785, 21, 'Saepe esse temporibus qui animi et quibusdam numquam aliquam praesentium inventore non provident illum officia ipsam quidem deserunt quia.', 'Wendy', 'Kutch'),
+(8291, 21, 'Accusantium vitae deserunt velit culpa distinctio est qui rem necessitatibus fugit saepe aut dolorem esse quibusdam.', 'Keith', 'Hauck'),
+(9494, 26, 'Atque qui nesciunt nostrum sint sunt nisi voluptatem aut nesciunt accusantium saepe quos facere rerum sit enim.', 'Demarcus', 'Muller'),
+(24965, 35, 'Et voluptatem dolorem consequatur iusto accusantium deserunt nisi similique aut velit.', 'Christy', 'Rutherford'),
+(38240, 35, 'Qui dolores animi fugit magni et nisi distinctio suscipit reiciendis quod rerum quia ratione tempora ea deserunt incidunt autem cumque minima.', 'Clementine', 'Heathcote'),
+(70947, 37, 'Dolore recusandae ab mollitia et vel ad qui magni voluptates qui est est maiores eum cum.', 'Myrtice', 'Farrell'),
+(90964, 37, 'Omnis autem porro non quo dolorem et in minus commodi in ea totam repellat autem numquam repudiandae praesentium.', 'Danielle', 'Hoeger'),
+(99324, 42, 'Amet labore magnam doloribus perspiciatis officiis quisquam aliquam et est.', 'Filiberto', 'Hintz'),
+(127653, 43, 'Ipsam maiores iure voluptas dignissimos et et vero vero molestiae voluptates.', 'Yolanda', 'Roob'),
+(1693251, 43, 'Cumque quisquam magnam quia commodi nesciunt aut soluta sunt mollitia quaerat provident quo voluptatem praesentium maxime expedita laboriosam.', 'Zakary', 'Sauer'),
+(3217990, 43, 'Perferendis illum laborum cum qui enim tempore a soluta in.', 'Alfonso', 'Sawayn'),
+(4515637, 43, 'Fugit perferendis consequatur velit delectus error enim eum omnis quidem voluptate sit quia impedit ducimus quo.', 'Bernie', 'Hilpert'),
+(4639683, 43, 'Fuga molestias dolore optio autem iusto quae labore nemo a eius.', 'Rashawn', 'Harber'),
+(37493032, 46, 'Qui atque corporis autem architecto quae doloremque aut nemo ratione asperiores doloribus est sunt qui tenetur quis.', 'Solon', 'Treutel'),
+(45326215, 46, 'Perferendis laborum aut consequatur sed consequatur qui ipsa eligendi ex voluptas ea similique placeat blanditiis deserunt eaque in et.', 'Clair', 'Hickle'),
+(83917824, 46, 'Temporibus facilis ut mollitia eos facere dolor aperiam cum est.', 'Makenzie', 'Gleason'),
+(9223372036854775807, 46, 'Iure quasi excepturi excepturi ut cumque doloribus et harum explicabo.', 'Salvador', 'Wisozk');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prison_officers`
+-- Struktura tabeli dla tabeli `prison_officers`
 --
 
 CREATE TABLE `prison_officers` (
@@ -249,7 +249,7 @@ CREATE TABLE `prison_officers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `prison_officers`
+-- Zrzut danych tabeli `prison_officers`
 --
 
 INSERT INTO `prison_officers` (`id`, `is_active`, `name`, `password`, `role`, `surname`, `username`) VALUES
@@ -263,17 +263,17 @@ INSERT INTO `prison_officers` (`id`, `is_active`, `name`, `password`, `role`, `s
 (9223372036854775807, b'0', 'Ethyl', '8502d927c6466d434e4293600ff08045f01c436e', 'ROLE_USER', 'Marquardt', 'jairo.langosh');
 
 --
--- Indexes for dumped tables
+-- Indeksy dla zrzutów tabel
 --
 
 --
--- Indexes for table `cells`
+-- Indeksy dla tabeli `cells`
 --
 ALTER TABLE `cells`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `meetings`
+-- Indeksy dla tabeli `meetings`
 --
 ALTER TABLE `meetings`
   ADD PRIMARY KEY (`id`),
@@ -282,29 +282,29 @@ ALTER TABLE `meetings`
   ADD KEY `FKgr4r60oefsd72nnov73gsy8gq` (`meeting_room_id`);
 
 --
--- Indexes for table `meeting_rooms`
+-- Indeksy dla tabeli `meeting_rooms`
 --
 ALTER TABLE `meeting_rooms`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `prisoners`
+-- Indeksy dla tabeli `prisoners`
 --
 ALTER TABLE `prisoners`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `prison_officers`
+-- Indeksy dla tabeli `prison_officers`
 --
 ALTER TABLE `prison_officers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Constraints for dumped tables
+-- Ograniczenia dla zrzutów tabel
 --
 
 --
--- Constraints for table `meetings`
+-- Ograniczenia dla tabeli `meetings`
 --
 ALTER TABLE `meetings`
   ADD CONSTRAINT `FK7f9jf703blj1rfdsgiyoog9gl` FOREIGN KEY (`prisoner_officer_id`) REFERENCES `prison_officers` (`id`),
