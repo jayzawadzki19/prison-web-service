@@ -1,4 +1,4 @@
-package pl.ipp31.prisonwebservicebackend;
+package pl.ipp31.prisonwebservicebackend.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
