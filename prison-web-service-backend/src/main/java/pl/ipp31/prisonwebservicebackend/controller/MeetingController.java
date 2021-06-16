@@ -8,6 +8,8 @@ import pl.ipp31.prisonwebservicebackend.dto.MeetingDTO;
 import pl.ipp31.prisonwebservicebackend.exception.MeetingNotFountException;
 import pl.ipp31.prisonwebservicebackend.service.MeetingService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/meetings")
 public class MeetingController {
@@ -24,7 +26,42 @@ public class MeetingController {
         return ResponseEntity.ok(meetingService.getMeetingById(id));
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<MeetingDTO>> getAllMeetings() {
+        return ResponseEntity.ok(meetingService.getAllMeetings());
+    }
 
+    @GetMapping("/byPrisoner/{id}")
+    public ResponseEntity<List<MeetingDTO>> getAllByPrisonerId(@PathVariable Long id) {
+        return ResponseEntity.ok(meetingService.getAllByPrisonerId(id));
+    }
+
+    @GetMapping("/byPrisonerOfficer/{id}")
+    public ResponseEntity<List<MeetingDTO>> getAllByPrisonOfficerId(@PathVariable Long id) {
+        return ResponseEntity.ok(meetingService.getAllByPrisonOfficerId(id));
+    }
+
+    @GetMapping("/roomId/{id}")
+    public ResponseEntity<List<MeetingDTO>> getAllByMeetingRoomId(@PathVariable Long id) {
+        return ResponseEntity.ok(meetingService.getAllByMeetingRoomId(id));
+    }
+
+    @GetMapping("/byFinished")
+    public ResponseEntity<List<MeetingDTO>> getAllByFinished(@RequestParam String finished) {
+        return ResponseEntity.ok(meetingService.getAllByFinished(finished));
+    }
+
+    @PostMapping("/new")
+    public ResponseEntity<MeetingDTO> createMeeting(@RequestBody MeetingDTO meetingDTO) {
+        meetingService.createMeeting(meetingDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(meetingDTO);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteMeeting(@PathVariable Long id) {
+        meetingService.deleteMeeting(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
 
 
     @ExceptionHandler(MeetingNotFountException.class)

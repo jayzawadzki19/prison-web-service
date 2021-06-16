@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class MeetingService {
 
-    private MeetingRepository meetingRepository;
+    private final MeetingRepository meetingRepository;
 
     @Autowired
     public MeetingService(MeetingRepository meetingRepository) {
@@ -31,23 +31,85 @@ public class MeetingService {
         return dtos;
     }
 
+    public List<MeetingDTO> getAllByPrisonerId(Long id) {
+
+        List<Meeting> meetings = meetingRepository.findAllByPrisonerId(id);
+        List<MeetingDTO> dtos = new ArrayList<>();
+
+        meetings.forEach(m -> dtos.add(mapMeetingToDTO(m)));
+
+        return dtos;
+    }
+
+    public List<MeetingDTO> getAllByPrisonOfficerId(Long id) {
+
+        List<Meeting> meetings = meetingRepository.findAllByPrisonOfficerId(id);
+        List<MeetingDTO> dtos = new ArrayList<>();
+
+        meetings.forEach(m -> dtos.add(mapMeetingToDTO(m)));
+
+        return dtos;
+    }
+
+    public List<MeetingDTO> getAllByMeetingRoomId(Long id) {
+
+        List<Meeting> meetings = meetingRepository.findAllByMeetingRoomId(id);
+        List<MeetingDTO> dtos = new ArrayList<>();
+
+        meetings.forEach(m -> dtos.add(mapMeetingToDTO(m)));
+
+        return dtos;
+    }
+
+    public List<MeetingDTO> getAllByFinished(String b) {
+        boolean finished = b.equalsIgnoreCase("yes");
+        List<Meeting> meetings = meetingRepository.findAllByFinished(finished);
+        List<MeetingDTO> dtos = new ArrayList<>();
+
+        meetings.forEach(m -> dtos.add(mapMeetingToDTO(m)));
+
+        return dtos;
+    }
+
     public MeetingDTO getMeetingById(Long meetingId) {
         Optional<Meeting> optionalMeeting = meetingRepository.findById(meetingId);
         Meeting meeting = optionalMeeting.orElseThrow(() -> new MeetingNotFountException("Meeting does not exist!"));
         return mapMeetingToDTO(meeting);
     }
 
-    public MeetingDTO mapMeetingToDTO(Meeting meeting) {
-        MeetingDTO dto = new MeetingDTO();
+    public void createMeeting(MeetingDTO meetingDTO) {
+        meetingRepository.save(mapDTOtoMeeting(meetingDTO));
+    }
 
-        dto.setId(meeting.getId());
-        dto.setMeetingEnd(meeting.getMeetingEnd());
-        dto.setMeetingStart(meeting.getMeetingStart());
-        dto.setFinished(meeting.isFinished());
-        dto.setMeetingRoomId(meeting.getMeetingRoomId());
-        dto.setPrisonerId(meeting.getPrisonerId());
-        dto.setVisitorData(meeting.getVisitorData());
-        dto.setPrisonOfficerId(meeting.getPrisonOfficerId());
-        return dto;
+    public void deleteMeeting(Long id) {
+        Optional<Meeting> optionalMeeting = meetingRepository.findById(id);
+        Meeting meeting = optionalMeeting.orElseThrow(() -> new MeetingNotFountException("Meeting does not exist!"));
+        meetingRepository.delete(meeting);
+    }
+
+    public MeetingDTO mapMeetingToDTO(Meeting meeting) {
+        return MeetingDTO
+                .builder()
+                .id(meeting.getId())
+                .meetingEnd(meeting.getMeetingEnd())
+                .meetingStart(meeting.getMeetingStart())
+                .isFinished(meeting.isFinished())
+                .meetingRoomId(meeting.getMeetingRoomId())
+                .prisonerId(meeting.getPrisonerId())
+                .visitorData(meeting.getVisitorData())
+                .prisonOfficerId(meeting.getPrisonOfficerId()).build();
+    }
+
+    public Meeting mapDTOtoMeeting(MeetingDTO meeting) {
+        return Meeting
+                .builder()
+                .id(meeting.getId())
+                .meetingEnd(meeting.getMeetingEnd())
+                .meetingStart(meeting.getMeetingStart())
+                .isFinished(meeting.isFinished())
+                .meetingRoomId(meeting.getMeetingRoomId())
+                .prisonerId(meeting.getPrisonerId())
+                .visitorData(meeting.getVisitorData())
+                .prisonOfficerId(meeting.getPrisonOfficerId()).build();
     }
 }
