@@ -1,5 +1,6 @@
 package pl.ipp31.prisonwebservicebackend.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @Table(name = "meetings")
 @NoArgsConstructor
+@AllArgsConstructor
 public class Meeting {
 
     @Id
