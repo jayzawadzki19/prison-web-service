@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -43,10 +44,11 @@ class MeetingRoomTest {
 
 
 
-        when(meetingRepository.findById(123L)).thenReturn(Optional.of(meeting));
+        lenient().when(meetingRepository.findById(123L)).thenReturn(Optional.of(meeting));
         when(meetingService.getMeetingById(123L)).thenReturn(meetingDTO);
 
-        assertThat(meetingService.mapMeetingToDTO(meeting).equals(meetingDTO));
+        MeetingDTO response = meetingService.getMeetingById(123L);
+        assertThat(response.getId()).isEqualTo(meeting.getId());
 
 
 
