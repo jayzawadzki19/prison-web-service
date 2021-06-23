@@ -63,7 +63,7 @@ public class MeetingService {
 
     public List<MeetingDTO> getAllByFinished(String b) {
         boolean finished = b.equalsIgnoreCase("yes");
-        List<Meeting> meetings = meetingRepository.findAllByFinished(finished);
+        List<Meeting> meetings = meetingRepository.findAllByIsFinished(finished);
         List<MeetingDTO> dtos = new ArrayList<>();
 
         meetings.forEach(m -> dtos.add(mapMeetingToDTO(m)));

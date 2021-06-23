@@ -30,25 +30,22 @@ class MeetingServiceTest {
 
         MeetingDTO meetingDTO =
                 new MeetingDTO(123L,
-                        "XD",
+                        "test",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
                         1L,1L,1L,true);
         Meeting meeting =
                 new Meeting(123L,
-                        "XD",
+                        "test",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
                         1L,1L,1L,true);
-
 
 
         when(meetingRepository.findById(123L)).thenReturn(Optional.of(meeting));
         when(meetingService.getMeetingById(123L)).thenReturn(meetingDTO);
 
         assertThat(meetingService.mapMeetingToDTO(meeting).equals(meetingDTO));
-
-
 
     }
 }
