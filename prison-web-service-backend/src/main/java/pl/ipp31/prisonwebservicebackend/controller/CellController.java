@@ -6,6 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.ipp31.prisonwebservicebackend.dto.CellDTO;
 import pl.ipp31.prisonwebservicebackend.dto.MeetingDTO;
+import pl.ipp31.prisonwebservicebackend.entity.Cell;
+import pl.ipp31.prisonwebservicebackend.entity.PrisonOfficer;
 import pl.ipp31.prisonwebservicebackend.exception.CellNotFoundException;
 import pl.ipp31.prisonwebservicebackend.exception.MeetingNotFountException;
 import pl.ipp31.prisonwebservicebackend.repository.CellRepository;
@@ -32,10 +34,23 @@ public class CellController {
     public ResponseEntity<List<CellDTO>> getCellByCellNumber(@PathVariable int number) {
         return ResponseEntity.ok(cellService.getCellsByCellNumber(number));}
 
-@GetMapping("/getAll")
-public ResponseEntity<List<CellDTO>> getAllCells(){
+    @GetMapping("/getAll")
+        public ResponseEntity<List<CellDTO>> getAllCells(){
         return ResponseEntity.ok(cellService.getAllCells());
-}
+    }
+    
+    @PostMapping("/new")
+    public ResponseEntity<String> createNew(@RequestBody Cell cell) {
+        cellService.createCell(cell);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PostMapping("/delete/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id) {
+        cellService.deleteCell(id);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+
 
     @ExceptionHandler(CellNotFoundException.class)
     public ResponseEntity<String> handleMeetingNotFountException(CellNotFoundException ex) {

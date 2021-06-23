@@ -6,6 +6,7 @@ import pl.ipp31.prisonwebservicebackend.dto.CellDTO;
 import pl.ipp31.prisonwebservicebackend.dto.MeetingDTO;
 import pl.ipp31.prisonwebservicebackend.entity.Cell;
 import pl.ipp31.prisonwebservicebackend.entity.Meeting;
+import pl.ipp31.prisonwebservicebackend.entity.PrisonOfficer;
 import pl.ipp31.prisonwebservicebackend.exception.CellNotFoundException;
 import pl.ipp31.prisonwebservicebackend.exception.MeetingNotFountException;
 import pl.ipp31.prisonwebservicebackend.repository.CellRepository;
@@ -54,5 +55,12 @@ public class CellService {
         dto.setCellNumber(cell.getCellNumber());
         dto.setSpots(cell.getSpots());
         return dto;
+    }
+    public void createCell(Cell cell) {
+        cellRepository.save(cell);
+    }
+
+    public void deleteCell(Long id) {
+        cellRepository.deleteById(id);
     }
 }
