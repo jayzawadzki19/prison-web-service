@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CellComponent } from './cell/cell.component';
-import { MeetingComponent } from './meeting/meeting.component';
-import { PrisonerComponent } from './prisoner/prisoner.component';
-import { PrisonofficerComponent } from './prisonofficer/prisonofficer.component';
-import { MeetingroomComponent } from './meetingroom/meetingroom.component';
+import { CellComponent } from './components/cell/cell.component';
+import { MeetingComponent } from './components/meeting/meeting.component';
+import { PrisonerComponent } from './components/prisoner/prisoner.component';
+import { PrisonofficerComponent } from './components/prisonofficer/prisonofficer.component';
+import { MeetingroomComponent } from './components/meetingroom/meetingroom.component';
 
 @NgModule({
   declarations: [

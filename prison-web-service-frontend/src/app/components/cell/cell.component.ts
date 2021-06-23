@@ -1,7 +1,7 @@
 import { LocationChangeEvent } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { CellService } from '../cell.service';
+import { CellService } from '../../services/cell.service';
 
 export interface Cell {
   id: number;
