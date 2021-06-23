@@ -1,5 +1,6 @@
 package pl.ipp31.prisonwebservicebackend.service;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -7,12 +8,16 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pl.ipp31.prisonwebservicebackend.dto.MeetingDTO;
 import pl.ipp31.prisonwebservicebackend.entity.Meeting;
+import pl.ipp31.prisonwebservicebackend.exception.MeetingNotFountException;
 import pl.ipp31.prisonwebservicebackend.repository.MeetingRepository;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -33,22 +38,41 @@ class MeetingServiceTest {
                         "XD",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
-                        1L,1L,1L,true);
+                        1L, 1L, 1L, true);
         Meeting meeting =
                 new Meeting(123L,
                         "XD",
                         LocalDateTime.now(),
                         LocalDateTime.now(),
-                        1L,1L,1L,true);
+                        1L, 1L, 1L, true);
 
-
-
-        when(meetingRepository.findById(123L)).thenReturn(Optional.of(meeting));
+        lenient().when(meetingRepository.findById(123L)).thenReturn(Optional.of(meeting));
         when(meetingService.getMeetingById(123L)).thenReturn(meetingDTO);
 
-        assertThat(meetingService.mapMeetingToDTO(meeting).equals(meetingDTO));
+        MeetingDTO response = meetingService.getMeetingById(123L);
+
+        assertThat(response.getId()).isEqualTo(meeting.getId());
+        assertThat(response.getVisitorData()).isEqualTo(meeting.getVisitorData());
+    }
 
 
+    @Test
+    @DisplayName("Should return all meetings")
+    void shouldReturnAllMeetings() {
+        List<Meeting> meetings = Arrays.asList(
+                new Meeting(124L,
+                        "XD", LocalDateTime.now(), LocalDateTime.now(), 1L, 1L, 1L, true),
+                new Meeting(123L,
+                        "XD", LocalDateTime.now(), LocalDateTime.now(), 1L, 1L, 1L, true),
+                new Meeting(121L,
+                        "XD", LocalDateTime.now(), LocalDateTime.now(), 1L, 1L, 1L, true));
 
+
+    }
+
+    @Test
+    void shouldThrowExceptionWhenMeetingIsNotFound() {
+        Assertions.assertThatThrownBy(() -> meetingService.getMeetingById(99999L))
+                .isInstanceOf(MeetingNotFountException.class).hasMessage("Meeting does not exist!");
     }
 }
