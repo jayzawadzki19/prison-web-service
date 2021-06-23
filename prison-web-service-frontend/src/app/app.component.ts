@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CellService } from './cell.service';
 
 @Component({
   selector: 'app-root',

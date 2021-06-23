@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Cell} from './cell/cell.component';
 import { Observable } from 'rxjs';
-import { threadId } from 'worker_threads';
 @Injectable({
   providedIn: 'root'
 })
 export class CellService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {}
+  
   getCells():Observable<Cell[]>{
     return this.http.get<Cell[]>('https://localhost:8080/cells/getAll');
-
   }
   getCell(id:number):Observable<Cell>{
     return this.http.get<Cell>('https://localhost:8080/cells/byId'+id);
