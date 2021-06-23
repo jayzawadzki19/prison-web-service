@@ -17,6 +17,7 @@ import java.util.Set;
 @Table(name = "prison_officers")
 @AllArgsConstructor
 @Builder
+@AllArgsConstructor
 public class PrisonOfficer {
 
     @Id

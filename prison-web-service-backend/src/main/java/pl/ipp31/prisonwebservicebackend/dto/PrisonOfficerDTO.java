@@ -11,6 +11,7 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @Builder
+@AllArgsConstructor
 public class PrisonOfficerDTO {
     private Long id;
     private String name;
