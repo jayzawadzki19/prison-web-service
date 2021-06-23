@@ -9,11 +9,9 @@ import pl.ipp31.prisonwebservicebackend.entity.Meeting;
 import java.util.Set;
 
 @Data
-@NoArgsConstructor
-@Builder
 @AllArgsConstructor
+@Builder
 public class PrisonOfficerDTO {
-
     private Long id;
     private String name;
     private String surname;

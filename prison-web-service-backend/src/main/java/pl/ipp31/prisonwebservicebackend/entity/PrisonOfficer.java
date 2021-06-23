@@ -3,7 +3,6 @@ package pl.ipp31.prisonwebservicebackend.entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -16,9 +15,8 @@ import java.util.Set;
 @Entity
 @Data
 @Table(name = "prison_officers")
-@NoArgsConstructor
-@Builder
 @AllArgsConstructor
+@Builder
 public class PrisonOfficer {
 
     @Id
@@ -49,7 +47,7 @@ public class PrisonOfficer {
     private String role;
 
     {
-        this.role =  "ROLE_USER";
+        this.role = "ROLE_USER";
         this.meetings = new HashSet<>();
     }
 }
