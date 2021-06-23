@@ -1,5 +1,6 @@
 package pl.ipp31.prisonwebservicebackend.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,7 @@ import java.util.Set;
 @Table(name = "prison_officers")
 @NoArgsConstructor
 @Builder
+@AllArgsConstructor
 public class PrisonOfficer {
 
     @Id
