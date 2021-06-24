@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class CellService {
 
   constructor(private http:HttpClient) {}
-  
+
   getCells():Observable<Cell[]>{
     return this.http.get<Cell[]>('https://localhost:8080/cells/all');
   }
@@ -25,7 +25,7 @@ export class CellService {
     return this.http.post<Cell>('https://localhost:8080/cells/new',cell);
   }
  // deletecell(cell:Cell):Observable<Cell>{
-  //  return ; 
+  //  return ;
  // }
 
 }
