@@ -18,6 +18,10 @@ meetingrooms:Meetingroom[]=[];
   constructor(private meetingroomService:MeetingroomService, private router:Router) { }
 
   ngOnInit(): void {
+    this.getMeetingRooms();
   }
-
+  
+  getMeetingRooms(){
+    this.meetingroomService.getMeetingRooms().subscribe(res=>this.meetingrooms=res);
+  }
 }

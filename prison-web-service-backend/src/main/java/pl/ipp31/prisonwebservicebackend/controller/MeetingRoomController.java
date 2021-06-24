@@ -20,6 +20,11 @@ public class MeetingRoomController {
         this.meetingRoomService = meetingRoomService;
     }
 
+    @GetMapping("/all")
+    public ResponseEntity<List<MeetingRoomDTO>> getAllMeetingRooms() {
+        return ResponseEntity.ok(meetingRoomService.getAllMeetingRooms());
+    }
+
     @GetMapping("/byId/{id}")
     public ResponseEntity<MeetingRoomDTO> getMeetingRoomById(@PathVariable Long id) {
         return ResponseEntity.ok(meetingRoomService.getMeetingRoomById(id));

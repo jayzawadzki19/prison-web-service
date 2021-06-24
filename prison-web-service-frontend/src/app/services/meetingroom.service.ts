@@ -10,8 +10,10 @@ export class MeetingroomService {
 
   constructor(private http:HttpClient) { }
 
-  getMeetingrooms(id:number):Observable<Meetingroom>{
-    //w javie getall dodać
+  getMeetingRooms():Observable<Meetingroom[]>{
+    return this.http.get<Meetingroom[]>('http://localhost:8080/meetingrooms/all');
+  }
+  getMeetingRoomsById(id:number):Observable<Meetingroom>{
     return this.http.get<Meetingroom>('http://localhost:8080/meetingrooms/byId'+id)
   }
 }
