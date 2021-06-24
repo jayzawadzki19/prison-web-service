@@ -1,1 +1,99 @@
-<p>prisonofficer works!</p>
+<div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+              <div class="text-wrapper">
+                <a class="navbar-brand d-flex align-items-center fw-bold fs-1 text-white" href="">
+                    <img src="../assets/images/handcuffs.png" width="35 px"/>Prison Web Service</a>
+              </div>
+          </li>
+          <li class="nav-item nav-category">Menu</li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cells/all">
+              <i class="menu-icon typcn typcn-document-text"></i>
+              <span class="menu-title">Cele</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/meetings/all">
+              <i class="menu-icon typcn typcn-document-text"></i>
+              <span class="menu-title">Spotkania</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/meetingrooms/all">
+              <i class="menu-icon typcn typcn-shopping-bag"></i>
+              <span class="menu-title">Pokoje spotkań</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/prisoners/all">
+              <i class="menu-icon typcn typcn-th-large-outline"></i>
+              <span class="menu-title">Więźniowie</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/prisonofficers/all">
+              <i class="menu-icon typcn typcn-bell"></i>
+              <span class="menu-title">Pracownicy więzienia</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="">
+              <i class="menu-icon typcn typcn-user-outline"></i>
+              <span class="menu-title">Strona główna</span>
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+    <div class="main-panel">
+        <div class="content-wrapper">
+          <!-- Page Title Header Starts-->
+            <div class="row page-title-header">
+                <div class="col-12">
+                    <div class="page-header">
+                        <h4 class="page-title">Pracownicy więzienia</h4>
+                    </div>
+                </div>
+            </div>
+          <!-- Page Title Header Ends-->
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                      <div class="d-flex">
+                        <div class="wrapper">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                  <thead>
+                                    <tr>
+                                        <th>Id więźnia</th>
+                                        <th>Imię</th>
+                                        <th>Nazwisko</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <ng-container *ngFor="let p of prisonOfficers">
+                                        <tr>
+                                            <th>{{p.id}}</th>
+                                            <th>{{p.name}}</th>
+                                            <th>{{p.surname}}</th>
+                                        </tr> 
+                                     </ng-container>
+                                  </tbody>
+                                </table>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

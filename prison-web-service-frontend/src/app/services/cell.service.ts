@@ -10,19 +10,19 @@ export class CellService {
   constructor(private http:HttpClient) {}
 
   getCells():Observable<Cell[]>{
-    return this.http.get<Cell[]>('https://localhost:8080/cells/all');
+    return this.http.get<Cell[]>('http://localhost:8080/cells/getAll');
   }
   getCell(id:number):Observable<Cell>{
-    return this.http.get<Cell>('https://localhost:8080/cells/byId'+id);
+    return this.http.get<Cell>('http://localhost:8080/cells/byId'+id);
   }
   getCellByCellNumber(cellNumber:number){
     return this.http.get<Cell>('https://localhost:8080/cells/byCellNumber'+cellNumber);
   }
   getCellBySpots(spots:number){
-    return this.http.get<Cell>('https://localhost:8080/cells/bySpots'+spots);
+    return this.http.get<Cell>('http://localhost:8080/cells/bySpots'+spots);
   }
   addCell(cell:Cell):Observable<Cell>{
-    return this.http.post<Cell>('https://localhost:8080/cells/new',cell);
+    return this.http.post<Cell>('http://localhost:8080/cells/new',cell);
   }
  // deletecell(cell:Cell):Observable<Cell>{
   //  return ;

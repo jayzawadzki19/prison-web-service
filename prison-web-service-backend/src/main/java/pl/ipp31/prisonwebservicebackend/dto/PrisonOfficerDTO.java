@@ -10,6 +10,7 @@ import java.util.Set;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class PrisonOfficerDTO {
     private Long id;
