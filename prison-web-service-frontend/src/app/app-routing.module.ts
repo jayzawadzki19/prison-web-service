@@ -12,21 +12,24 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'cells', children:
     [
-      {path: 'all', component: CellComponent}
-    ] },
-  {path:'meetings',children:[
-    {path:'all',component:MeetingComponent}
-  ]},
-  {path:'meetingrooms',children:[
-    {path:'all',component:MeetingroomComponent}
-  ]},
-  {path:'prisoners',children:[
-    {path:'all',component:PrisonerComponent}
-  ]},
-  {path:'prisonofficers',children:[
-    {path:'all',component:PrisonofficerComponent}
-  ]},
-
+      { path: 'all', component: CellComponent}
+    ]},
+  { path:'meetings', children:
+    [
+      { path:'all',component: MeetingComponent}
+    ]},
+  { path:'meetingrooms', children:
+    [
+      { path:'all', component: MeetingroomComponent}
+    ]},
+  { path:'prisoners', children:
+    [
+      { path:'all', component: PrisonerComponent}
+    ]},
+  { path:'prisonofficers', children:
+    [
+      { path:'all', component: PrisonofficerComponent}
+    ]},
 ];
 
 @NgModule({

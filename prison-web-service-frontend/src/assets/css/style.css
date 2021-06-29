@@ -432,7 +432,7 @@
     .sidebar > .nav .nav-item .nav-link {
       align-items: center;
       display: flex;
-      padding: 15px 30px 15px 55px;
+      padding: 15px 30px 15px 30px;
       white-space: nowrap;
       color: #fff; }
       .sidebar > .nav .nav-item .nav-link i.menu-arrow {
@@ -518,7 +518,6 @@
     .sidebar > .nav > .nav-item:not(.nav-profile) > .nav-link {
       position: relative; }
       .sidebar > .nav > .nav-item:not(.nav-profile) > .nav-link:before {
-        content: "";
         position: absolute;
         left: 30px;
         right: 50%;
@@ -533,7 +532,7 @@
       transition-timing-function: "ease-in-out";
       transition-property: "background", "color", "box-shadow", "padding"; }
     .sidebar > .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile):not(.hover-open) > .nav-link:not([aria-expanded="true"]) {
-      background: #0f25d5;
+      background: #6b75c5;
       padding-left: 65px; }
       .sidebar > .nav:not(.sub-menu) > .nav-item:hover:not(.nav-profile):not(.hover-open) > .nav-link:not([aria-expanded="true"]):before {
         border-color: #fff; }

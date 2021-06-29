@@ -17,7 +17,7 @@ import { MeetingroomComponent } from './components/meetingroom/meetingroom.compo
     MeetingComponent,
     PrisonerComponent,
     PrisonofficerComponent,
-    MeetingroomComponent
+    MeetingroomComponent,
   ],
   imports: [
     BrowserModule,
