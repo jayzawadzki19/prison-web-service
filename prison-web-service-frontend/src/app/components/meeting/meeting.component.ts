@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MeetingService } from 'src/app/services/meeting.service';
-export interface Meeting{
+export interface Meeting {
   id:number;
   visitorData:string;
   meetingStart:string;
@@ -18,11 +18,12 @@ export interface Meeting{
 })
 export class MeetingComponent implements OnInit {
 meetings:Meeting[]=[]
-  constructor(private meetingService:MeetingService, private router:Router) { }
+  constructor(private meetingService: MeetingService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getMeetings();
   }
+
   getMeetings(){
     this.meetingService.getMeetings().subscribe(res=>this.meetings=res);
   }

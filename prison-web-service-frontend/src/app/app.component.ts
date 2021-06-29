@@ -8,5 +8,7 @@ import { CellService } from './services/cell.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private router: Router) {}
+
   title = 'prison-web-service-frontend';
 }

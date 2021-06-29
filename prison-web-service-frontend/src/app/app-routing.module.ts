@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CellComponent } from './components/cell/cell.component';
 import { HomeComponent } from './components/home/home.component';
+import { MeetingFormComponent } from './components/meeting-form/meeting-form.component';
 import { MeetingComponent } from './components/meeting/meeting.component';
 import { MeetingroomComponent } from './components/meetingroom/meetingroom.component';
 import { PrisonerComponent } from './components/prisoner/prisoner.component';
@@ -16,7 +17,8 @@ const routes: Routes = [
     ]},
   { path:'meetings', children:
     [
-      { path:'all',component: MeetingComponent}
+      { path: 'all', component: MeetingComponent},
+      { path: 'new', component: MeetingFormComponent}
     ]},
   { path:'meetingrooms', children:
     [
@@ -29,7 +31,7 @@ const routes: Routes = [
   { path:'prisonofficers', children:
     [
       { path:'all', component: PrisonofficerComponent}
-    ]},
+    ]}
 ];
 
 @NgModule({

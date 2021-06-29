@@ -1,0 +1,66 @@
+<main class="main" id="top">
+    <nav class="navbar navbar-expand-lg navbar-light py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+      <div class="container"><a class="navbar-brand d-flex align-items-center fw-bold fs-2" href="">
+        <img src="../assets/images/handcuffs.png"/>Prison Web Service</a>
+      </div>
+    </nav>
+    <section class="py-0" id="stronaglowna">
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-md-5 col-lg-6 order-md-1 pt-8"><img class="img-fluid" src="assets/images/meeting.jpg" alt="" /></div>
+          <div class="col-md-7 col-lg-6 text-center text-md-start pt-5">
+            <h1 class="mb-4 display-3 fw-bold">Umów się na wizytę z więźniem<br class="d-block d-lg-none d-xl-block" /></h1>
+            <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="nazwa">Dane osoby odwiedzającej</label>
+                                <input class="form-control" id="visitorData" name="visitorData" formControlName="visitorData" required maxlength="100" minlength="5">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="meetingStart">Data i godzina rozpoczęcia spotkania</label>
+                                <input class="form-control" id="meetingStart" name="meetingStart" formControlName="meetingStart">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="meetingEnd">Data i godzina końca spotkania</label>
+                                <input class="form-control" id="meetingEnd" name="meetingEnd" formControlName="meetingEnd">
+                            </div>
+                        </div>
+                        <p class="mt-3 mb-4 fs-1 fw-bold">W przypadku poniższych danych skontaktuj się <br class="d-block d-lg-none d-xl-block" />z siedzibą więzienia, aby ustalić te dane.</p>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="prisonerId">Id więźnia</label>
+                                <input class="form-control" id="prisonerId" name="prisonerId" formControlName="prisonerId">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="prisonOfficerId">Id pracownika</label>
+                                <input class="form-control" id="prisonOfficerId" name="prisonOfficerId" formControlName="prisonOfficerId">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="meetingRoomId">Id pokoju</label>
+                                <input class="form-control" id="meetingRoomId" name="meetingRoomId" formControlName="meetingRoomId">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-7 col-lg-6 text-center text-md-start">
+                                <button class="btn btn-lg btn-primary rounded-pill hover-top btn-purple-moon" [disabled]="form.invalid">Wyślij</button>
+                                <button class="btn btn-lg btn-primary rounded-pill hover-top btn-red-gradient" type="reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
